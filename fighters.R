@@ -3,6 +3,7 @@
 ## Author:  Preston Vasquez
 ## Date:  12/26/2016
 ##################################################################################
+ptm <- proc.time()
 
 ## Libraries
 library(XML)
@@ -54,4 +55,31 @@ colnames(dataset)[9] <- c("L")
 colnames(dataset)[10] <- c("D")
 colnames(dataset)[11] <- c("Belt")
 
-write.csv(dataset, "fighters.csv",row.names=F)
+## Replacing all the blanks with NA
+dataset[dataset == ""] <- NA
+
+## Replacing all "--" with NA
+dataset[dataset == "--"] <- NA
+
+## Removing lbs
+dataset$WT <- gsub("lbs.", "", as.character(dataset$WT))
+
+## removing the gap in X' X" in the HT columns
+HTConvVec <- gsub(" ", "", as.character(dataset$HT))
+
+## Converting height to inches
+dataset$HT <- sapply(strsplit(as.character(HTConvVec),"'|\""),
+                      function(x){12*as.numeric(x[1]) + 
+                          as.numeric(x[2])})
+
+## Removing gaps in multiple word nicknames
+dataset$Nickname <- gsub(" ", "_", as.character(dataset$Nickname))
+
+## Removing "\"" from reach
+dataset$Reach <- gsub("\"", "", as.character(dataset$Reach))
+
+## Writing the .csv
+write.table(dataset, "fighters.txt",row.names=F, quote = F)
+
+## determinging CPU time
+proc.time() - ptm
