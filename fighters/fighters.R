@@ -1,5 +1,5 @@
 ##################################################################################
-## R code to export the fighter data to a .csv from fightmetric.com
+## R code to export the fighter data to a .csv or .txt from fightmetric.com
 ## Author:  Preston Vasquez
 ## Date:  12/26/2016
 ##################################################################################
