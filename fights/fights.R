@@ -55,8 +55,8 @@ for(i in 1:lenFSU){
 ## Storing data in a proxy without the notes column
 refData <- dataset[,-8]
 
-## Removing all rows that do not pertain to a fight or have a round 
-## number
+## Removing all rows that do not pertain to a fight or do not have a
+## round number
 refData$RND <- as.numeric(refData$RND)
 refData <- subset(refData, refData$RND != "NA")
 
