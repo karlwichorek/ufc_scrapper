@@ -60,8 +60,11 @@ refData <- dataset[,-8]
 refData$RND <- as.numeric(refData$RND)
 refData <- subset(refData, refData$RND != "NA")
 
-## Exporting to .csv
-write.csv(refData, "fightData.csv")
+## Writing the .csv
+write.csv(refData, "fightsData.csv", row.names = F)
+
+## Writing the .txt
+write.table(refData, "fightsData.txt",row.names = F, quote = F)
 
 ## determinging CPU time
 proc.time() - ptm
