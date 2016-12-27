@@ -25,9 +25,6 @@ tables <- readHTMLTable(URL)
 return(data.frame(tables))
 }
 
-## Initializing big data frame with the first alphabetical input a and b
-new <- rbind(getFighters("a"), getFighters("b"))
-
 ## Defining a dummy data frame to hold the big data
 dataset <- data.frame()
 
