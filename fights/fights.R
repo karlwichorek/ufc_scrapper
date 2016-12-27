@@ -37,6 +37,7 @@ dataset <- data.frame()
 ## Length of fightSubURL
 lenFSU <- length(fightSubURL)
 
+## for loop to fill the data frame with the scraped fight info
 for(i in 1:lenFSU){
   tryCatch({
   temp <- getFights(fightSubURL[i])
