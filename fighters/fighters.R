@@ -76,7 +76,10 @@ dataset$Nickname <- gsub(" ", "_", as.character(dataset$Nickname))
 dataset$Reach <- gsub("\"", "", as.character(dataset$Reach))
 
 ## Writing the .csv
-write.table(dataset, "fighters.txt",row.names=F, quote = F)
+write.csv(dataset, "fightersData.csv", row.names = F)
+
+## Writing the .txt
+write.table(dataset, "fightersData.txt",row.names = F, quote = F)
 
 ## determinging CPU time
 proc.time() - ptm
