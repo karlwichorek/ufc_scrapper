@@ -40,17 +40,8 @@ for (S in letters){
 dataset <- dataset[-1,]
 
 ## Renaming the columns
-colnames(dataset)[1] <- c("Fist")
-colnames(dataset)[2] <- c("Last")
-colnames(dataset)[3] <- c("Nickname")
-colnames(dataset)[4] <- c("HT")
-colnames(dataset)[5] <- c("WT")
-colnames(dataset)[6] <- c("Reach")
-colnames(dataset)[7] <- c("Stance")
-colnames(dataset)[8] <- c("W")
-colnames(dataset)[9] <- c("L")
-colnames(dataset)[10] <- c("D")
-colnames(dataset)[11] <- c("Belt")
+colnames(dataset)[1:11] <- c("Fist", "Last", "Nickname", "HT", "WT", 
+                             "Reach", "Stance", "W", "L", "D", "Belt")
 
 ## Replacing all the blanks with NA
 dataset[dataset == ""] <- NA
