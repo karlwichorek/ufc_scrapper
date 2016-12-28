@@ -28,7 +28,7 @@ Overall, the `proc.time()` function reveals that the real CPU time on my machine
 ```
 
 #### `tryCatch({})` for the for loop
-Some of the fights do not import properly (around 11/374).  There is no way to know which fights will cause an error, and, rather than risk termintating the for loop, we use the `tryCatch({})` function to skip the fights with errors.  
+Some of the fight cards do not import properly (around 11/374).  There is no way to know which fights will cause an error, and, rather than risk termintating the for loop, we use the `tryCatch({})` function to skip the fights with errors.  
 
 
 ### fightersData.txt
